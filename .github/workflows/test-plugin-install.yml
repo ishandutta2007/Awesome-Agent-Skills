@@ -1,0 +1,70 @@
+name: Test Plugin Installation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate-skills:
+    name: Validate skill content
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate all skills
+        run: node scripts/validate-skills.js
+
+  validate-commands:
+    name: Validate command parity and description sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate commands across all tool directories
+        run: node scripts/validate-commands.js
+
+  validate:
+    name: Validate plugin structure
+    needs: [validate-skills, validate-commands]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Validate marketplace and plugin manifests
+        run: claude plugin validate .
+
+  test-install:
+    name: Test plugin installation
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Configure git to use HTTPS
+        run: git config --global url."https://github.com/".insteadOf "git@github.com:"
+
+      - name: Add marketplace
+        run: claude plugin marketplace add ./
+
+      - name: List marketplaces
+        run: claude plugin marketplace list
+
+      - name: Install plugin
+        run: claude plugin install agent-skills@addy-agent-skills --scope user
