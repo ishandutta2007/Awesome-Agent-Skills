@@ -135,6 +135,21 @@ See [docs/opencode-setup.md](docs/opencode-setup.md).
 </details>
 
 <details>
+<summary><b>OpenClaw</b></summary>
+
+Install individual skills from the repository with `openclaw skills install`.
+See [docs/openclaw-setup.md](docs/openclaw-setup.md).
+
+```bash
+git clone https://github.com/addyosmani/agent-skills.git
+openclaw skills install ./agent-skills/skills/test-driven-development
+openclaw skills install ./agent-skills/skills/code-review-and-quality --global
+openclaw skills list
+```
+
+</details>
+
+<details>
 <summary><b>GitHub Copilot</b></summary>
 
 Use agent definitions from `agents/` as Copilot personas and skill content in `.github/copilot-instructions.md`. See [docs/copilot-setup.md](docs/copilot-setup.md).
@@ -235,7 +250,7 @@ Pre-configured specialist personas for targeted reviews:
 | [security-auditor](agents/security-auditor.md) | Security Engineer | Vulnerability detection, threat modeling, OWASP assessment |
 | [web-performance-auditor](agents/web-performance-auditor.md) | Web Performance Engineer | Core Web Vitals audit with Quick/Deep modes and a metric-honesty rule; run it via `/webperf` |
 
-See [docs/agents.md](docs/agents.md) for the decision matrix, orchestration rules, and how personas compose with skills and slash commands.
+See [docs/personas.md](docs/personas.md) for the decision matrix, orchestration rules, and how personas compose with skills and slash commands.
 
 ---
 
@@ -245,12 +260,12 @@ Quick-reference material that skills pull in when needed:
 
 | Reference | Covers |
 |-----------|--------|
-| [testing-patterns.md](references/testing-patterns.md) | Test structure, naming, mocking, React/API/E2E examples, anti-patterns |
-| [security-checklist.md](references/security-checklist.md) | Pre-commit checks, auth, input validation, headers, CORS, OWASP Top 10 |
-| [performance-checklist.md](references/performance-checklist.md) | Core Web Vitals targets, frontend/backend checklists, measurement commands |
-| [accessibility-checklist.md](references/accessibility-checklist.md) | Keyboard nav, screen readers, visual design, ARIA, testing tools |
-| [observability-checklist.md](references/observability-checklist.md) | On-call questions, structured logging, RED/USE metrics, tracing, symptom-based alerting, pre-launch gate |
-| [orchestration-patterns.md](references/orchestration-patterns.md) | Endorsed multi-persona orchestration patterns, anti-patterns, and the "personas don't invoke personas" rule |
+| [testing-patterns.md](checklists/testing-patterns.md) | Test structure, naming, mocking, React/API/E2E examples, anti-patterns |
+| [security-checklist.md](checklists/security-checklist.md) | Pre-commit checks, auth, input validation, headers, CORS, OWASP Top 10 |
+| [performance-checklist.md](checklists/performance-checklist.md) | Core Web Vitals targets, frontend/backend checklists, measurement commands |
+| [accessibility-checklist.md](checklists/accessibility-checklist.md) | Keyboard nav, screen readers, visual design, ARIA, testing tools |
+| [observability-checklist.md](checklists/observability-checklist.md) | On-call questions, structured logging, RED/USE metrics, tracing, symptom-based alerting, pre-launch gate |
+| [orchestration-patterns.md](checklists/orchestration-patterns.md) | Endorsed multi-persona orchestration patterns, anti-patterns, and the "personas don't invoke personas" rule |
 
 ---
 
@@ -317,7 +332,7 @@ awesome-agent-skills/
 │   ├── shipping-and-launch/           #   Ship
 │   └── using-awesome-ai-skills/       #   Meta: how to use this pack
 ├── agents/                            # 4 specialist personas
-├── references/                        # 5 supplementary checklists
+├── checklists/                        # 6 supplementary checklists
 ├── hooks/                             # Session lifecycle hooks
 ├── .claude/commands/                  # 7 slash commands (Claude Code)
 ├── .gemini/commands/                  # 7 slash commands (Gemini CLI)
