@@ -25,6 +25,7 @@ The agent should automatically map user intent to skills:
 - Planning / breakdown → `planning-and-task-breakdown`
 - Bug / failure / unexpected behavior → `debugging-and-error-recovery`
 - Code review → `code-review-and-quality`
+- Workflow reconstruction / learning from past shipped work → `ax-extract-workflow`
 - Refactoring / simplification → `code-simplification`
 - API or interface design → `api-and-interface-design`
 - UI work → `frontend-ui-engineering`

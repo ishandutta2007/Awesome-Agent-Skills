@@ -19,7 +19,7 @@ docs/         → Setup guides for different tools
 **Plan:** planning-and-task-breakdown
 **Build:** incremental-implementation, test-driven-development, context-engineering, source-driven-development, doubt-driven-development, frontend-ui-engineering, api-and-interface-design, mcp-tool-integration
 **Verify:** browser-testing-with-devtools, debugging-and-error-recovery, eval-driven-development
-**Review:** code-review-and-quality, code-simplification, security-and-hardening, performance-optimization
+**Review:** code-review-and-quality, ax-extract-workflow, code-simplification, security-and-hardening, performance-optimization
 **Ship:** git-workflow-and-versioning, ci-cd-and-automation, deprecation-and-migration, documentation-and-adrs, observability-and-instrumentation, shipping-and-launch
 
 ## Conventions

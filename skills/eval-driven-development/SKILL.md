@@ -19,3 +19,27 @@ Eval-Driven Development ensures that AI features behave deterministically and pr
 3. **Run Pipeline**: Execute the AI feature over the dataset and collect results.
 4. **Analyze Failures**: Inspect low-scoring examples and update prompts or logic.
 5. **Establish Baseline**: Set a minimum threshold for CI/CD checks.
+
+## Common Rationalizations
+
+| Rationalization | Why It Is Wrong |
+|---|---|
+| "Manual spot checks are enough." | Spot checks miss regressions across prompts, model versions, and edge cases. |
+| "We can add evals after launch." | Without a baseline, you cannot tell whether a later prompt or model change improved behavior. |
+| "The judge model says it is good." | LLM judges need criteria, calibration examples, and failure review before they are trustworthy. |
+
+## Red Flags
+
+- No golden dataset exists
+- Metrics are vague or not tied to user-visible quality
+- Low-scoring examples are ignored instead of inspected
+- The baseline threshold is chosen after seeing the desired result
+
+## Verification
+
+Before finishing, confirm:
+
+- The golden dataset includes normal, edge, and known-failure cases
+- Metrics and evaluator prompts are committed or otherwise reproducible
+- The current model/prompt has a recorded baseline
+- Failure examples have been reviewed and categorized
