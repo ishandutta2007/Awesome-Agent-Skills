@@ -157,9 +157,9 @@ Skills are plain Markdown - they work with any agent that accepts system prompts
 
 ---
 
-## 📚 All 26 Skills
+## 📚 All 27 Skills
 
-The commands above are entry points. The pack includes 26 skills total — 25 lifecycle skills plus the `using-awesome-ai-skills` meta-skill. Each skill is a structured workflow with steps, verification gates, and anti-rationalization tables. You can also reference any skill directly.
+The commands above are entry points. The pack includes 27 skills total — 26 lifecycle skills plus the `using-awesome-ai-skills` meta-skill. Each skill is a structured workflow with steps, verification gates, and anti-rationalization tables. You can also reference any skill directly.
 
 ### Meta - Discover which skill applies
 
@@ -207,6 +207,7 @@ The commands above are entry points. The pack includes 26 skills total — 25 li
 | Skill | What It Does | Use When |
 |-------|-------------|----------|
 | [code-review-and-quality](skills/code-review-and-quality/SKILL.md) | Five-axis review, change sizing (~100 lines), severity labels (Nit/Optional/FYI), review speed norms, splitting strategies | Before merging any change |
+| [ax-extract-workflow](skills/ax-extract-workflow/SKILL.md) | Reconstructs the evidence trail behind a shipped artifact with ax sessions, recall, commits, and PR context | After a successful PR, demo, incident fix, or feature and you want the reusable workflow |
 | [code-simplification](skills/code-simplification/SKILL.md) | Chesterton's Fence, Rule of 500, reduce complexity while preserving exact behavior | Code works but is harder to read or maintain than it should be |
 | [security-and-hardening](skills/security-and-hardening/SKILL.md) | OWASP Top 10 prevention, auth patterns, secrets management, dependency auditing, three-tier boundary system | Handling user input, auth, data storage, or external integrations |
 | [performance-optimization](skills/performance-optimization/SKILL.md) | Measure-first approach - Core Web Vitals targets, profiling workflows, bundle analysis, anti-pattern detection | Performance requirements exist or you suspect regressions |
@@ -289,7 +290,7 @@ Every skill follows a consistent anatomy:
 
 ```
 awesome-agent-skills/
-├── skills/                            # 26 skills (25 lifecycle + 1 meta)
+├── skills/                            # 27 skills (26 lifecycle + 1 meta)
 │   ├── interview-me/                  #   Define
 │   ├── idea-refine/                   #   Define
 │   ├── spec-driven-development/       #   Define
@@ -306,6 +307,7 @@ awesome-agent-skills/
 │   ├── eval-driven-development/       #   Verify
 │   ├── mcp-tool-integration/          #   Build
 │   ├── code-review-and-quality/       #   Review
+│   ├── ax-extract-workflow/           #   Review
 │   ├── code-simplification/          #   Review
 │   ├── security-and-hardening/        #   Review
 │   ├── performance-optimization/      #   Review
