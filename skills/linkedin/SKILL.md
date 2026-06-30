@@ -5,9 +5,18 @@ description: General-purpose LinkedIn automation – fetch profiles, search peop
 
 # LinkedIn Skill
 
-You have access to `linkedin` – a CLI tool for LinkedIn automation. Use it to fetch profiles, search people and companies, send messages, manage connections, create posts, react, comment, and more.
+## Overview
 
-Each command sends a request to Linked API, which runs a real cloud browser to perform the action on LinkedIn. Operations are **not instant** – expect 30 seconds to several minutes depending on complexity.
+Use this skill to operate `linkedin`, a CLI tool for LinkedIn automation. Use it to fetch profiles, search people and companies, send messages, manage connections, create posts, react, comment, and more.
+
+Each command sends a request to Linked API, which runs a real cloud browser to perform the action on LinkedIn. Operations are **not instant** - expect 30 seconds to several minutes depending on complexity.
+
+## When to Use
+
+- Fetch public profile, company, post, or connection data from LinkedIn.
+- Search people or companies with structured filters.
+- Send messages, connection requests, posts, reactions, or comments for an authenticated account.
+- Run a custom LinkedIn workflow when the built-in commands are not enough.
 
 If `linkedin` is not available, install it:
 
@@ -504,10 +513,35 @@ linkedin reset                                   # Remove active account
 linkedin reset --all                             # Remove all accounts
 ```
 
+## Common Rationalizations
+
+| Rationalization | Reality |
+| --- | --- |
+| "Skip `--json` because the command is simple." | Always request machine-readable output and inspect the `success` field. |
+| "Run many actions at once to save time." | Account operations queue sequentially and can trigger limits. |
+| "Ignore authentication errors and retry." | Exit code 2 means the user must connect tokens first. |
+| "Send a generic message quickly." | User-facing LinkedIn actions need explicit intent and careful text. |
+
+## Red Flags
+
+- Authentication tokens are missing, expired, or pasted into chat unexpectedly.
+- A request would send unsolicited bulk messages, connection spam, or engagement spam.
+- The user asks to bypass account limits, automation controls, or LinkedIn safety checks.
+- A command would disclose private profile, message, or account data unnecessarily.
+- A workflow keeps timing out or returns `workflowId` without a final success result.
+
+## Verification
+
+- Confirm every command uses `LINKEDAPI_CLIENT=skill:linkedin`, `--json`, and `-q`.
+- Treat exit code 0 as transport success only; inspect `success` and `error`.
+- For writes, summarize the target and action before running the command.
+- Preserve returned `workflowId` values for timeout recovery.
+- Stop and ask for token setup when a command exits with code 2.
+
 ## Important Behavior
 
 - **Sequential execution.** All operations for an account run one at a time. Multiple requests queue up.
-- **Not instant.** A real browser navigates LinkedIn – expect 30 seconds to several minutes per operation.
+- **Not instant.** A real browser navigates LinkedIn - expect 30 seconds to several minutes per operation.
 - **Timestamps in UTC.** All dates and times are in UTC.
 - **Single quotes for text arguments.** Use single quotes around message text, post text, and comments to avoid shell interpretation issues with special characters.
 - **Action limits.** Per-account limits are configurable on the platform. A `limitExceeded` error means the limit was reached.

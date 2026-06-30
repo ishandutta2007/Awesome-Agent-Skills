@@ -172,7 +172,7 @@ Skills are plain Markdown - they work with any agent that accepts system prompts
 
 ---
 
-## 📚 All 27 Skills
+## 📚 All 30 Skills
 
 The commands above are entry points. The pack includes 27 skills total — 26 lifecycle skills plus the `using-awesome-ai-skills` meta-skill. Each skill is a structured workflow with steps, verification gates, and anti-rationalization tables. You can also reference any skill directly.
 
@@ -208,6 +208,14 @@ The commands above are entry points. The pack includes 27 skills total — 26 li
 | [frontend-ui-engineering](skills/frontend-ui-engineering/SKILL.md) | Component architecture, design systems, state management, responsive design, WCAG 2.1 AA accessibility | Building or modifying user-facing interfaces |
 | [api-and-interface-design](skills/api-and-interface-design/SKILL.md) | Contract-first design, Hyrum's Law, One-Version Rule, error semantics, boundary validation | Designing APIs, module boundaries, or public interfaces |
 | [mcp-tool-integration](skills/mcp-tool-integration/SKILL.md) | Implementing and connecting Model Context Protocol tools. | Extending agent capabilities with external data sources |
+
+### External Data & Agent Integrations
+
+| Skill | What It Does | Use When |
+|-------|-------------|----------|
+| [linkedin](skills/linkedin/SKILL.md) | Guides LinkedIn automation workflows with structured output and authentication checks | Working with LinkedIn profiles, companies, messages, posts, or connections |
+| [xquik-public-data](skills/xquik-public-data/SKILL.md) | Guides safe public X/Twitter data workflows through documented Xquik routes | Reading public tweets, profiles, trends, lists, communities, articles, media, or search results |
+| [hermes-tweet](skills/hermes-tweet/SKILL.md) | Guides safe Hermes Tweet plugin setup, reads, and gated X/Twitter actions | Installing Hermes Tweet or choosing read versus action tools for X/Twitter workflows |
 
 ### Verify - Prove it works
 
