@@ -195,6 +195,7 @@ The commands above are entry points. The pack includes 27 skills total — 26 li
 | Skill | What It Does | Use When |
 |-------|-------------|----------|
 | [planning-and-task-breakdown](skills/planning-and-task-breakdown/SKILL.md) | Decompose specs into small, verifiable tasks with acceptance criteria and dependency ordering | You have a spec and need implementable units |
+| [plan-ledger-tasks-yylo](skills/plan-ledger-tasks-yylo/SKILL.md) | Creates a concise Product Development Requirement and implementation-sized YYLO Ledger tasks with dependencies and acceptance criteria | The user explicitly asks to plan or register work |
 
 ### Build - Write the code
 
