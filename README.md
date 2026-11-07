@@ -218,6 +218,7 @@ The commands above are entry points. The pack includes 27 skills total — 26 li
 | [xquik-public-data](skills/xquik-public-data/SKILL.md) | Guides safe public X/Twitter data workflows through documented Xquik routes | Reading public tweets, profiles, trends, lists, communities, articles, media, or search results |
 | [hermes-tweet](skills/hermes-tweet/SKILL.md) | Guides safe Hermes Tweet plugin setup, reads, and gated X/Twitter actions | Installing Hermes Tweet or choosing read versus action tools for X/Twitter workflows |
 | [curlshot](skills/curlshot/SKILL.md) | Captures web pages as screenshots, PDFs, or scrolling videos, and renders raw HTML or Markdown, through the CurlShot screenshot API | Needing a screenshot, full-page, mobile, or dark-mode capture of a public URL, or an image or PDF of generated HTML |
+| [looot](skills/looot/SKILL.md) | Runs priced business-data jobs through one API key: work email and phone lookup, email verification, company enrichment, SERP and web pages as markdown | Needing contact, company, SERP or web data for an agent task, with the price shown before each call |
 
 ### Creative Media
 
